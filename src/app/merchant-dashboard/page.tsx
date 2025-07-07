@@ -28,54 +28,54 @@ export default function MerchantDashboard() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-100 via-blue-100 to-white pb-10">
       {/* Glassy Gradient Header with Welcome */}
-      <div className="backdrop-blur-xl bg-gradient-to-r from-emerald-600/90 to-blue-600/90 shadow-2xl mb-10 px-0 md:px-8 pt-10 pb-14 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
-          <div className="flex items-center gap-8">
-            <div className="bg-white/40 backdrop-blur-lg rounded-full p-6 shadow-2xl flex items-center justify-center border-4 border-white/30">
-              <Building2 className="w-16 h-16 text-emerald-600" />
+      <div className="backdrop-blur-xl bg-gradient-to-r from-emerald-600/90 to-blue-600/90 shadow-2xl mb-10 px-0 md:px-8 pt-6 md:pt-10 pb-8 md:pb-14 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 md:gap-8 relative z-10">
+          <div className="flex items-center gap-4 md:gap-8">
+            <div className="bg-white/40 backdrop-blur-lg rounded-full p-3 md:p-6 shadow-2xl flex items-center justify-center border-4 border-white/30">
+              <Building2 className="w-10 h-10 md:w-16 md:h-16 text-emerald-600" />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white drop-shadow mb-2">Welcome, <span className="text-yellow-200">{merchantData.businessName}</span>!</h1>
-              <div className="flex items-center text-white/90 space-x-5 text-lg font-semibold">
-                <div className="flex items-center"><Star className="w-6 h-6 text-yellow-300 mr-1" /><span>{merchantData.rating}</span></div>
+              <h1 className="text-xl md:text-4xl font-extrabold text-white drop-shadow mb-1 md:mb-2 leading-tight">Welcome, <span className="text-yellow-200">{merchantData.businessName}</span>!</h1>
+              <div className="flex items-center text-white/90 space-x-2 md:space-x-5 text-xs md:text-lg font-semibold flex-wrap">
+                <div className="flex items-center"><Star className="w-4 h-4 md:w-6 md:h-6 text-yellow-300 mr-1" /><span>{merchantData.rating}</span></div>
                 <span>•</span>
                 <span>{merchantData.tier}</span>
                 <span>•</span>
                 <div className={`flex items-center ${merchantData.isOpen ? 'text-green-200' : 'text-red-200'}`}> 
                   <span className={`mr-1 w-2 h-2 rounded-full ${merchantData.isOpen ? 'bg-green-200' : 'bg-red-200'}`}></span>
-                  <span>{merchantData.isOpen ? 'Open' : 'Closed'}</span>
+                  <span className="text-xs md:text-base">{merchantData.isOpen ? 'Open' : 'Closed'}</span>
                 </div>
               </div>
-              <div className="mt-3 text-white/80 text-base hidden md:block">Manage your business, track analytics, and engage with your customers all in one place.</div>
+              <div className="mt-2 md:mt-3 text-white/80 text-xs md:text-base hidden md:block">Manage your business, track analytics, and engage with your customers all in one place.</div>
             </div>
           </div>
-          <div className="space-x-4 flex">
-            <Button variant="outline" className="space-x-2 border-white text-white bg-white/20 hover:bg-white/30 shadow-lg">
-              <Settings className="w-5 h-5" />
+          <div className="space-x-2 md:space-x-4 flex">
+            <Button variant="outline" className="space-x-2 border-white text-white bg-white/20 hover:bg-white/30 shadow-lg px-2 md:px-4 py-1 md:py-2 text-xs md:text-base">
+              <Settings className="w-4 h-4 md:w-5 md:h-5" />
               <span>Settings</span>
             </Button>
-            <Button variant="default" className="bg-gradient-to-r from-green-200 to-blue-200 hover:from-green-300 hover:to-blue-300 text-emerald-900 font-bold space-x-2 shadow-lg">
+            <Button variant="default" className="bg-gradient-to-r from-green-200 to-blue-200 hover:from-green-300 hover:to-blue-300 text-emerald-900 font-bold space-x-2 shadow-lg px-2 md:px-4 py-1 md:py-2 text-xs md:text-base">
               <span>{merchantData.isOpen ? 'Mark as Closed' : 'Mark as Open'}</span>
             </Button>
           </div>
         </div>
       </div>
-      <div className="max-w-6xl mx-auto px-2 md:px-0">
+      <div className="max-w-6xl mx-auto px-1 md:px-0">
         {/* Navigation Tabs */}
         <div className="relative z-20">
-          <div className="backdrop-blur-xl bg-white/80 rounded-2xl p-4 flex mb-14 overflow-x-auto shadow-lg border border-white/40 max-w-full scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-transparent gap-6 sticky top-0 z-30">
+          <div className="backdrop-blur-xl bg-white/80 rounded-2xl p-2 md:p-4 flex mb-8 md:mb-14 overflow-x-auto shadow-lg border border-white/40 max-w-full scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-transparent gap-2 md:gap-6 sticky top-0 z-30">
             {[
-              {tab: 'overview', icon: <TrendingUp className='w-5 h-5 mr-2' />},
-              {tab: 'analytics', icon: <BarChart3 className='w-5 h-5 mr-2' />},
-              {tab: 'reviews', icon: <Star className='w-5 h-5 mr-2' />},
-              {tab: 'photos', icon: <Upload className='w-5 h-5 mr-2' />},
-              {tab: 'settings', icon: <Settings className='w-5 h-5 mr-2' />},
+              {tab: 'overview', icon: <TrendingUp className='w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2' />},
+              {tab: 'analytics', icon: <BarChart3 className='w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2' />},
+              {tab: 'reviews', icon: <Star className='w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2' />},
+              {tab: 'photos', icon: <Upload className='w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2' />},
+              {tab: 'settings', icon: <Settings className='w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2' />},
             ].map(({tab, icon}) => (
               <button
                 key={tab}
-                className={`flex items-center px-10 py-4 rounded-xl capitalize whitespace-nowrap font-semibold transition-all duration-200 mr-2 last:mr-0 text-xl shadow-md transition-transform hover:scale-105 hover:shadow-xl ${
+                className={`flex items-center px-3 md:px-10 py-2 md:py-4 rounded-xl capitalize whitespace-nowrap font-semibold transition-all duration-200 mr-1 md:mr-2 last:mr-0 text-xs md:text-xl shadow-md transition-transform hover:scale-105 hover:shadow-xl ${
                   activeTab === tab
-                    ? 'bg-gradient-to-r from-emerald-600 to-blue-600 text-white shadow-xl scale-110'
+                    ? 'bg-gradient-to-r from-emerald-600 to-blue-600 text-white shadow-xl scale-105 md:scale-110'
                     : 'text-gray-600 hover:text-emerald-700 bg-white/70 hover:bg-emerald-50'
                 }`}
                 onClick={() => setActiveTab(tab)}
@@ -229,3 +229,4 @@ export default function MerchantDashboard() {
     </div>
   );
 }
+
