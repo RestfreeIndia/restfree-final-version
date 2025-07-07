@@ -32,24 +32,24 @@ const CategoryGrid = () => {
             }}
             className={
               !category.comingSoon && category.label === "Restrooms"
-                ? `flex flex-col items-center justify-center py-4 px-6 rounded-3xl cursor-pointer bg-gradient-to-br from-blue-600 via-emerald-400 to-green-400 text-white shadow-xl relative overflow-hidden transition-transform duration-300 ease-out hover:scale-105 hover:shadow-2xl shine-effect`
-                : `flex flex-col items-center justify-center py-4 px-6 rounded-3xl cursor-pointer bg-gradient-to-br from-gray-100 via-emerald-50 to-blue-50 text-gray-500 border border-dashed border-gray-200 shadow-md relative overflow-hidden transition-transform duration-300 ease-out hover:scale-102 shine-effect`
+                ? `flex flex-col items-center justify-center py-2 px-3 rounded-2xl cursor-pointer bg-gradient-to-br from-blue-600 via-emerald-400 to-green-400 text-white shadow-xl relative overflow-hidden transition-transform duration-300 ease-out hover:scale-105 hover:shadow-2xl shine-effect`
+                : `flex flex-col items-center justify-center py-2 px-3 rounded-2xl cursor-pointer bg-gradient-to-br from-gray-100 via-emerald-50 to-blue-50 text-gray-500 border border-dashed border-gray-200 shadow-md relative overflow-hidden transition-transform duration-300 ease-out hover:scale-102 shine-effect`
             }
-            style={{ minHeight: 90, minWidth: 140 }}
+            style={{ minHeight: 60, minWidth: 90 }}
           >
             <IconComponent 
-              size={40} 
-              className={'mb-2'} 
+              size={24} 
+              className={'mb-1'} 
             />
             <span className={
               !category.comingSoon && category.label === "Restrooms"
-                ? 'text-lg font-semibold text-center'
-                : 'text-lg font-medium text-center'
+                ? 'text-sm font-semibold text-center'
+                : 'text-sm font-medium text-center'
             }>
               {category.label}
             </span>
             {category.comingSoon && (
-              <span className="mt-1 text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100 shadow-sm">Coming Soon</span>
+              <span className="mt-1 text-[10px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100 shadow-sm">Coming Soon</span>
             )}
             {/* Shine overlay */}
             <span className="shine-anim" />
@@ -82,3 +82,4 @@ const CategoryGrid = () => {
 };
 
 export default CategoryGrid;
+
